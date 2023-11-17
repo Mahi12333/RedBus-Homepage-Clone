@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .cub_train {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cub,
+        .train {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cub img,
+        .train img {
+            width: 50px; /* Adjust the width of the images */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .cub div,
+        .train div {
+            margin-top: 5px; /* Adjust the margin between image and text */
+        }
+
+        /* Add underline style */
+        .cub div,
+        .train div {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cub div::after,
+        .train div::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px; /* Adjust the height of the underline */
+            background-color: #0074e4; /* Color of the underline */
+            bottom: 0;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: bottom right;
+        }
+
+        .cub div:hover::after,
+        .train div:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body>
+    <div class="cub_train">
+        <div class="cub">
+            <div><img src="./image/ryde.png" alt="ryde"></div>
+            <div>Cab/Bus Rental</div>
+        </div>
+        <div class="same_main_3" style="height: 23px;"></div>
+        <div class="train">
+            <div><img src="./image/redRail.png" alt="redRail"></div>
+            <div>Train Tickets</div>
+        </div>
+    </div>
+</body>
+</html>
